@@ -153,7 +153,7 @@ combinations = list(itertools.product(brutto_lohn_jahr, abrechnungsjahr, steuerk
 main_df = pd.DataFrame()
 # Iterate over the combinations and call collecting_info with each combination
 for i, combo in enumerate(combinations):
-    time.sleep(1)
+    time.sleep(1)  # not to send too many requests
     print(i, combo)
     response = collecting_info(*combo)
     soup = bs(response.content, 'lxml')
